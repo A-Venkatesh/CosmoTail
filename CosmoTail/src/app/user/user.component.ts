@@ -12,6 +12,9 @@ import {UserService} from '../user.service';
 })
 export class UserComponent implements OnInit {
 public user= new User();
+private userError:User;
+private isCreated:boolean=false;
+private userExist:boolean=false;
   constructor(private _userService:UserService) { }
 
   ngOnInit() {
