@@ -12,6 +12,7 @@ import { from } from 'rxjs';
 import { HomeComponent } from './home/home.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { LogInComponent } from './log-in/log-in.component';
 
 UserService
 @NgModule({
@@ -20,7 +21,8 @@ UserService
     routingComponents,
     HomeComponent,
     ErrorPageComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    LogInComponent
   ],
   imports: [
     BrowserModule,
