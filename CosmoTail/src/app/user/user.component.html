@@ -4,10 +4,12 @@
     <label for="email" class="col-2 col-form-label">Email</label>
     <div class="col-10">
     <input type="email" [(ngModel)]="user.email" name="email" id="email" formControlName="email" class="form-control" placeholder="" aria-describedby="helpId">
-    <small class="text-danger" *ngIf="email.touched && !!email.errors?.required">Email is required</small>
+    <!-- <small class="text-danger" *ngIf="email.touched && !!email.errors?.required">Email is required</small>
     
-     <small class="text-danger" *ngIf="!!email.errors?.email">Email is invalid</small>
-     
+     <small class="text-danger" *ngIf="!!email.errors?.email">Email is invalid</small> -->
+     <div *ngIf="email.errors.email">Email is required</div>
+                    <!-- <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+      -->
      </div>
   </div>
 

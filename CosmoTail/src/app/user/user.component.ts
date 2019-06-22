@@ -29,7 +29,7 @@ registrationForm: FormGroup;
       userName: ['', [Validators.required, Validators.minLength(3), ForbiddenNameValidator(/password/)]],
       password: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(14)]],
       confirmPassword: ['', [Validators.required]],
-      email: [''],
+      email: ['',Validators.required,Validators.email],
       age: ['',[Validators.min(10),Validators.max(60)]],
       phoneNum: ['',[Validators.minLength(10)]]
       
@@ -77,6 +77,7 @@ registrationForm: FormGroup;
   get phNum() {
     return this.registrationForm.get('phoneNum');
   }
+  get f() { return this.registrationForm.controls; }
 
 
 
