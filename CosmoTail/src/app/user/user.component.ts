@@ -52,7 +52,7 @@ constructor(private _userService:UserService) { }
  get f() { return this.profileForm.controls; }
   createUser(){
     alert(JSON.stringify([this.profileForm.value,this.profileForm.valid]))
-    this._userService.createUser(this.user).subscribe(
+    this._userService.createUser(this.profileForm.value).subscribe(
       data=>{
         console.log(data);
       },

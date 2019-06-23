@@ -5,8 +5,8 @@
     <div class="col-10">
     <input type="email" formControlName="email"  [(ngModel)]="user.email" name="email" id="email" class="form-control" [ngClass]="{'is-invalid':f.email.touched && f.email.invalid}" />
     <div *ngIf="{'is-invalid':f.email.touched && f.email.invalid}" class="invalid-feedback">
-      <div *ngIf="f.email.errors.required">Email is required</div>
-      <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+      <div *ngIf="f.email.errors?.required">Email is required</div>
+      <div *ngIf="f.email.errors?.email">Email must be a valid email address</div>
     </div>
     <!--  -->
 
@@ -19,9 +19,9 @@
     <input type="text" formControlName="name" [(ngModel)]="user.name"name="name" id="name" class="form-control" [ngClass]="{'is-invalid':f.name.touched && f.name.invalid}">
     
     <div *ngIf="{'is-invalid':f.name.touched && f.name.invalid}" class="invalid-feedback">
-      <div *ngIf="f.name.errors.required">Name is required</div>
-      <div *ngIf="f.name.errors.minlength">Minimum 3 characters required </div>
-      <div *ngIf="f.name.errors.maxlength">Maximun 18 characters allowed </div>
+      <div *ngIf="f.name.errors?.required">Name is required</div>
+      <div *ngIf="f.name.errors?.minlength">Minimum 3 characters required </div>
+      <div *ngIf="f.name.errors?.maxlength">Maximun 18 characters allowed </div>
     </div>
     </div>
   </div>
@@ -32,8 +32,8 @@
   <div class="col-10">
   <input type="password" formControlName="password" [(ngModel)]="user.password"class="form-control" name="password" id="password" placeholder="" [ngClass]="{'is-invalid':f.password.touched && f.password.invalid}">
   <div *ngIf="{'is-invalid':f.password.touched && f.password.invalid}" class="invalid-feedback">
-    <div *ngIf="f.password.errors.required">Password is required</div>
-    <div *ngIf="f.password.errors.minlength">Minimum 6 characters required </div>
+    <div *ngIf="f.password.errors?.required">Password is required</div>
+    <div *ngIf="f.password.errors?.minlength">Minimum 6 characters required </div>
   </div>
 
   </div>
@@ -43,7 +43,7 @@
   <div class="col-10">
   <input type="password" formControlName="confirmPassword" [(ngModel)]="user.confirmPassword"class="form-control" name="confirmPassword" id="confirmPassword" placeholder="" [ngClass]="{'is-invalid':f.confirmPassword.touched && f.confirmPassword.invalid}">
   <div *ngIf="{'is-invalid':f.confirmPassword.touched && f.confirmPassword.invalid}" class="invalid-feedback">
-    <div *ngIf="f.confirmPassword.errors.required">ConfirmPassword is required</div>
+    <div *ngIf="f.confirmPassword.errors?.required">ConfirmPassword is required</div>
   </div>
 
   </div>
@@ -55,7 +55,7 @@
 
   <div *ngIf="{'is-invalid':f.age.touched && f.age.invalid}" class="invalid-feedback">
       <div *ngIf="f.age.errors?.pattern">Enter valid age</div>
-    <div *ngIf="f.age.errors.min">Age is restricted</div>
+    <div *ngIf="f.age.errors?.min">Age is restricted</div>
     
  
 </div>
@@ -74,6 +74,6 @@
 </div>
 
 <div class="col col-12 align-content-md-center ">
-<button [disabled]="profileForm.valid" type="submit" value="createUser"   class="btn btn-success"  >Submit</button>
+<button [disabled]="!profileForm.valid" type="submit" value="createUser"   class="btn btn-success"  >Submit</button>
 </div>
 </form>

@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { LogInComponent } from './log-in/log-in.component';
+import { CarouselAdComponent } from './carousel-ad/carousel-ad.component';
 
 UserService
 @NgModule({
@@ -22,7 +23,8 @@ UserService
     HomeComponent,
     ErrorPageComponent,
     AboutUsComponent,
-    LogInComponent
+    LogInComponent,
+    CarouselAdComponent
   ],
   imports: [
     BrowserModule,

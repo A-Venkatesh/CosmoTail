@@ -7,10 +7,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { LogInComponent } from './log-in/log-in.component';
 
 const routes: Routes = [
+  {path:'',component: HomeComponent},
   {path:'registration', component: UserComponent},
   {path:'aboutUs', component: AboutUsComponent},
   {path:'logIn', component: LogInComponent},
-  {path:'',component: HomeComponent},
+  
   {path:'**',component: ErrorPageComponent}
 ];
 
